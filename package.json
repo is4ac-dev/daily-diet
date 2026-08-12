@@ -4,6 +4,7 @@
   "description": "API para gerenciamento de dieta",
   "scripts": {
     "dev": "tsx watch src/main.ts",
+    "knex": "node --import tsx ./node_modules/knex/bin/cli.js",
     "lint": "eslint src -e .ts"
   },
   "author": "Isaac Monteiro",
