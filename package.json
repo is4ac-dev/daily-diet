@@ -25,5 +25,8 @@
     "knex": "^3.3.0",
     "sqlite3": "^6.0.1",
     "zod": "^4.4.3"
+  },
+  "allowScripts": {
+    "sqlite3@6.0.1": true
   }
 }
