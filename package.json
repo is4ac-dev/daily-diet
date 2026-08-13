@@ -12,6 +12,7 @@
   "type": "module",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/bcrypt": "^6.0.0",
     "@types/node": "^26.2.0",
     "eslint": "^10.8.1",
     "globals": "^17.11.0",
@@ -20,6 +21,7 @@
     "typescript-eslint": "^8.67.0"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.4.2",
     "fastify": "^5.11.3",
     "knex": "^3.3.0",
@@ -27,6 +29,7 @@
     "zod": "^4.4.3"
   },
   "allowScripts": {
-    "sqlite3@6.0.1": true
+    "sqlite3@6.0.1": true,
+    "bcrypt@6.0.0": true
   }
 }
