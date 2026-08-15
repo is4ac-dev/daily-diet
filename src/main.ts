@@ -1,5 +1,10 @@
 import fastify from "fastify";
 import { ZodError } from "zod";
+
+import { auth } from "./middlewares/auth.js";
+
+import { publicUserRoutes } from "./routes/publicUser.js";
+import { authRoutes } from "./routes/auth.js";
 import { userRoutes } from "./routes/user.js";
 
 const app = fastify();
@@ -23,8 +28,20 @@ app.setErrorHandler((error, request, response) => {
   });
 });
 
-app.register(userRoutes, {
+app.register(authRoutes, {
+  prefix: "/auth",
+});
+
+app.register(publicUserRoutes, {
   prefix: "/user",
+});
+
+app.register(async (protectedApp) => {
+  protectedApp.addHook("preHandler", auth);
+
+  protectedApp.register(userRoutes, {
+    prefix: "user",
+  });
 });
 
 app
