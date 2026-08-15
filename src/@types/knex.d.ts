@@ -17,6 +17,14 @@ interface Meal {
   created_at: Date;
 }
 
+interface Session {
+  session_id: string;
+  user_id: string;
+  token_hash: string;
+  expires_at: string;
+  created_at: Date;
+}
+
 declare module "knex/types/tables.js" {
   interface Tables {
     users: Knex.CompositeTableType<
@@ -29,6 +37,12 @@ declare module "knex/types/tables.js" {
       Meal,
       Omit<Meal, "meal_id" | "created_at">,
       Partial<Omit<Meal, "meal_id" | "created_at">>
+    >;
+
+    sessions: Knex.CompositeTableType<
+      Session,
+      Omit<Session, "session_id" | "created_at">,
+      Partial<Omit<Session, "session_id" | "created_at">>
     >;
   }
 }
