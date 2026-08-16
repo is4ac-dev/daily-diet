@@ -12,9 +12,9 @@ API REST para cadastro de usuários e gerenciamento de refeições, desenvolvida
 Crie um arquivo `.env` na raiz do projeto:
 
 ```env
-NODE_ENV=DEV
-DATABASE_URL=./database/app.db
-PORT=3333
+NODE_ENV=
+DATABASE_URL=
+PORT=
 ```
 
 Instale as dependências e execute as migrations:
@@ -36,9 +36,9 @@ Crie um usuário por meio de `POST /user`:
 
 ```json
 {
-  "name": "Isaac",
-  "email": "isaac@example.com",
-  "password": "senha-segura"
+  "name": "",
+  "email": "",
+  "password": ""
 }
 ```
 
@@ -46,8 +46,8 @@ Autentique-se por meio de `POST /auth`:
 
 ```json
 {
-  "email": "isaac@example.com",
-  "password": "senha-segura"
+  "email": "",
+  "password": ""
 }
 ```
 
