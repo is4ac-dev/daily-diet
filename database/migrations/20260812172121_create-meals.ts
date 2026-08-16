@@ -12,6 +12,8 @@ export async function up(knex: Knex): Promise<void> {
     table.string("name").notNullable();
     table.text("description");
     table.boolean("healthy").notNullable();
+    table.timestamp("eaten_at").notNullable();
+    table.timestamp("updated_at").defaultTo(knex.fn.now()).notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now()).notNullable();
   });
 }

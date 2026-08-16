@@ -6,6 +6,7 @@ import { auth } from "./middlewares/auth.js";
 import { publicUserRoutes } from "./routes/publicUser.js";
 import { authRoutes } from "./routes/auth.js";
 import { userRoutes } from "./routes/user.js";
+import { mealRoutes } from "./routes/meal.js";
 
 const app = fastify();
 
@@ -41,6 +42,10 @@ app.register(async (protectedApp) => {
 
   protectedApp.register(userRoutes, {
     prefix: "user",
+  });
+
+  protectedApp.register(mealRoutes, {
+    prefix: "meal",
   });
 });
 

@@ -14,7 +14,9 @@ interface Meal {
   name: string;
   description: string | null;
   healthy: boolean;
-  created_at: Date;
+  eaten_at: string;
+  created_at: string;
+  updated_at: string;
 }
 
 interface Session {
@@ -35,8 +37,8 @@ declare module "knex/types/tables.js" {
 
     meals: Knex.CompositeTableType<
       Meal,
-      Omit<Meal, "meal_id" | "created_at">,
-      Partial<Omit<Meal, "meal_id" | "created_at">>
+      Omit<Meal, "meal_id" | "created_at" | "updated_at">,
+      Partial<Omit<Meal, "meal_id" | "created_at" | "updated_at">>
     >;
 
     sessions: Knex.CompositeTableType<
